@@ -15,7 +15,7 @@
 		7805A8B02502551A000B0907 /* CoreMLObjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805A8AF2502551A000B0907 /* CoreMLObjectDetector.swift */; };
 		7805A8B325025DFF000B0907 /* Underhood.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7805A8B225025DFF000B0907 /* Underhood.mlmodel */; };
 		7805A8B5250267C3000B0907 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805A8B4250267C3000B0907 /* Logger.swift */; };
-		7805A8B72503B252000B0907 /* UnderhoodDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805A8B62503B252000B0907 /* UnderhoodDetector.swift */; };
+		7805A8B72503B252000B0907 /* UnderHoodDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805A8B62503B252000B0907 /* UnderHoodDetector.swift */; };
 		7805A8BA2503C08F000B0907 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805A8B92503C08F000B0907 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		7805A8AF2502551A000B0907 /* CoreMLObjectDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLObjectDetector.swift; sourceTree = "<group>"; };
 		7805A8B225025DFF000B0907 /* Underhood.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Underhood.mlmodel; sourceTree = "<group>"; };
 		7805A8B4250267C3000B0907 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		7805A8B62503B252000B0907 /* UnderhoodDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderhoodDetector.swift; sourceTree = "<group>"; };
+		7805A8B62503B252000B0907 /* UnderHoodDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderHoodDetector.swift; sourceTree = "<group>"; };
 		7805A8B92503C08F000B0907 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		78B4BEEE250406F600837181 /* AR Session - mazda again.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR Session - mazda again.mov"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,7 +91,7 @@
 		7805A8B82503B2CB000B0907 /* Detectors */ = {
 			isa = PBXGroup;
 			children = (
-				7805A8B62503B252000B0907 /* UnderhoodDetector.swift */,
+				7805A8B62503B252000B0907 /* UnderHoodDetector.swift */,
 				7805A8AF2502551A000B0907 /* CoreMLObjectDetector.swift */,
 			);
 			path = Detectors;
@@ -168,7 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7805A8B72503B252000B0907 /* UnderhoodDetector.swift in Sources */,
+				7805A8B72503B252000B0907 /* UnderHoodDetector.swift in Sources */,
 				7805A8B5250267C3000B0907 /* Logger.swift in Sources */,
 				7805A8B02502551A000B0907 /* CoreMLObjectDetector.swift in Sources */,
 				7805A8B325025DFF000B0907 /* Underhood.mlmodel in Sources */,
