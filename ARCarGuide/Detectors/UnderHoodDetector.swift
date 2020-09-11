@@ -9,8 +9,8 @@
 import Foundation
 
 final class UnderHoodDetector: CoreMLObjectDetector {
-    init(searchCompleted: @escaping CoreMLObjectDetector.SearchCompletion) {
+    init() {
         let mlModel = Underhood().model
-        super.init(mlModel: mlModel, searchCompleted: searchCompleted)
+        super.init(mlModel: mlModel)
     }
 }
