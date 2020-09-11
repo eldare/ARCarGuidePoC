@@ -11,17 +11,10 @@ import Vision
 import ARKit
 import CoreML
 
-struct DetectorResult {
-    var identifier: String
-    var confidence: Float
-    var boundingBox: CGRect
-}
-
 class CoreMLObjectDetector {
     typealias SearchCompletion = (_ results: [DetectorResult], _ arFrame: ARFrame) -> Void
 
-    private var mlModel: MLModel
-    private var searchCompleted: SearchCompletion
+    private var searchCompletion: SearchCompletion?
     private let serialQueue: DispatchQueue = {
         let date = Date().description
         let queue = DispatchQueue(label: "modelDetection_\(date)",
@@ -31,16 +24,25 @@ class CoreMLObjectDetector {
     private var vnRequests = [VNRequest]()
     private var inProcessARFrame: ARFrame?
 
-    init(mlModel: MLModel, searchCompleted: @escaping SearchCompletion) {
-        self.mlModel = mlModel
-        self.searchCompleted = searchCompleted
-        setupRequest()
+    /// use a custom `MLModel` to construct a `CoreMLRequest`
+    init(mlModel: MLModel) {
+        setupRequest(mlModel: mlModel)
     }
 
-    func search(in arFrame: ARFrame) {
+    /// use `VNImageBasedRequest` type to construct a Vision request
+    init(requestType: VNImageBasedRequest.Type) {
+        setupRequest(type: requestType)
+    }
+
+    /// search ARFrame with the initiated Vision request
+    func search(in arFrame: ARFrame,
+                completion: @escaping SearchCompletion) {
         guard inProcessARFrame == nil else {
+            // progress only if no AR frame is being proccessed
             return
         }
+
+        searchCompletion = completion
 
         serialQueue.async { [weak self] in
             guard let self = self else {
@@ -52,39 +54,34 @@ class CoreMLObjectDetector {
                 let requestHandler = VNImageRequestHandler(cvPixelBuffer: arFrame.capturedImage,
                                                            options: [:])
                 try requestHandler.perform(self.vnRequests)
-
-                // DEV: incomplete - *ELDAR* - debug - with fixed image that is known to be good
-//                if let cgImage = UIImage(named: "underHoodModelTest")?.cgImage {
-//                    let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-//                    try requestHandler.perform(self.vnRequests)
-//                }
             }
             catch {
-                log.error("\(error)")
+                log.error(.init(describing: error))
             }
         }
     }
 }
 
 extension CoreMLObjectDetector {
-    private func setupRequest() {
+    private func setupRequest(mlModel: MLModel) {
         do {
             let vnModel = try VNCoreMLModel(for: mlModel)
-            let coreMlRequest = VNCoreMLRequest(model: vnModel,
-                                                completionHandler: { [weak self] in
+            let vnRequest = VNCoreMLRequest(model: vnModel,
+                                            completionHandler: { [weak self] in
                 self?.requestCompletion(request: $0, error: $1)
             })
-            vnRequests.append(coreMlRequest)
-
-            // DEV: incomplete - *ELDAR* - debug - testing a well trained model
-//            let coreMlRequest = VNRecognizeAnimalsRequest(completionHandler: { [weak self] in
-//                self?.requestCompletion(request: $0, error: $1)
-//            })
-//            vnRequests.append(coreMlRequest)
+            vnRequests.append(vnRequest)
         }
         catch {
-            log.error("\(error)")
+            log.error(.init(describing: error))
         }
+    }
+
+    private func setupRequest(type preferedRequestType: VNImageBasedRequest.Type) {
+        let vnRequest = preferedRequestType.init(completionHandler: { [weak self] in
+            self?.requestCompletion(request: $0, error: $1)
+        })
+        vnRequests.append(vnRequest)
     }
 
     private func requestCompletion(request: VNRequest, error: Error?) {
@@ -96,14 +93,13 @@ extension CoreMLObjectDetector {
                     log.error("somehow inProcessARFrame is nil")
                     return
                 }
-                self?.searchCompleted(detectorResults, inProcessARFrame)
+                self?.searchCompletion?(detectorResults, inProcessARFrame)
                 self?.inProcessARFrame = nil
             }
         }
 
-        // DEV: incomplete - *ELDAR* - debug
         if let error = error {
-            print("\(error)")
+            log.error("\(error)")
         }
 
         guard let results = request.results as? [VNRecognizedObjectObservation] else { return }
