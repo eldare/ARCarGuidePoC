@@ -8,20 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		7805A89C250252F6000B0907 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805A89B250252F6000B0907 /* AppDelegate.swift */; };
-		7805A89E250252F6000B0907 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805A89D250252F6000B0907 /* ViewController.swift */; };
 		7805A8A3250252F6000B0907 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7805A8A1250252F6000B0907 /* Main.storyboard */; };
 		7805A8A5250252FA000B0907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7805A8A4250252FA000B0907 /* Assets.xcassets */; };
 		7805A8A8250252FA000B0907 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7805A8A6250252FA000B0907 /* LaunchScreen.storyboard */; };
+		7805A8B02502551A000B0907 /* CoreMLObjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805A8AF2502551A000B0907 /* CoreMLObjectDetector.swift */; };
+		7805A8B325025DFF000B0907 /* Underhood.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7805A8B225025DFF000B0907 /* Underhood.mlmodel */; };
+		7805A8B5250267C3000B0907 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805A8B4250267C3000B0907 /* Logger.swift */; };
+		7805A8B72503B252000B0907 /* UnderHoodDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805A8B62503B252000B0907 /* UnderHoodDetector.swift */; };
+		787276A42506DE8B00864871 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787276A32506DE8B00864871 /* MainViewController.swift */; };
+		787276A7250ACD6A00864871 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787276A6250ACD6A00864871 /* MainViewModel.swift */; };
+		787276AA250ACDA400864871 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787276A9250ACDA400864871 /* CGRect.swift */; };
+		787276AC250ACE4000864871 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787276AB250ACE4000864871 /* Entities.swift */; };
+		787276AE250ACE8B00864871 /* ProcessResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787276AD250ACE8B00864871 /* ProcessResult.swift */; };
+		787276B0250AD36D00864871 /* DetectorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787276AF250AD36D00864871 /* DetectorResult.swift */; };
+		787276B2250AD54400864871 /* ARCoachingOverlayViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787276B1250AD54400864871 /* ARCoachingOverlayViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7805A898250252F6000B0907 /* ARCarGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARCarGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7805A89B250252F6000B0907 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7805A89D250252F6000B0907 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7805A8A2250252F6000B0907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7805A8A4250252FA000B0907 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7805A8A7250252FA000B0907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7805A8A9250252FA000B0907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7805A8AF2502551A000B0907 /* CoreMLObjectDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLObjectDetector.swift; sourceTree = "<group>"; };
+		7805A8B225025DFF000B0907 /* Underhood.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Underhood.mlmodel; sourceTree = "<group>"; };
+		7805A8B4250267C3000B0907 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		7805A8B62503B252000B0907 /* UnderHoodDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderHoodDetector.swift; sourceTree = "<group>"; };
+		787276A225056ABC00864871 /* AR Session - katan & willy.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR Session - katan & willy.mov"; sourceTree = "<group>"; };
+		787276A32506DE8B00864871 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		787276A6250ACD6A00864871 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		787276A9250ACDA400864871 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		787276AB250ACE4000864871 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		787276AD250ACE8B00864871 /* ProcessResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessResult.swift; sourceTree = "<group>"; };
+		787276AF250AD36D00864871 /* DetectorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectorResult.swift; sourceTree = "<group>"; };
+		787276B1250AD54400864871 /* ARCoachingOverlayViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCoachingOverlayViewDelegate.swift; sourceTree = "<group>"; };
+		78B4BEEE250406F600837181 /* AR Session - mazda again.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR Session - mazda again.mov"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +60,8 @@
 		7805A88F250252F6000B0907 = {
 			isa = PBXGroup;
 			children = (
+				787276A225056ABC00864871 /* AR Session - katan & willy.mov */,
+				78B4BEEE250406F600837181 /* AR Session - mazda again.mov */,
 				7805A89A250252F6000B0907 /* ARCarGuide */,
 				7805A899250252F6000B0907 /* Products */,
 			);
@@ -54,14 +78,56 @@
 		7805A89A250252F6000B0907 /* ARCarGuide */ = {
 			isa = PBXGroup;
 			children = (
+				7805A8B125025DC2000B0907 /* CoreML */,
+				787276A5250ACD5600864871 /* Main */,
+				7805A8B82503B2CB000B0907 /* Detectors */,
+				787276A8250ACD7800864871 /* Helpers */,
 				7805A89B250252F6000B0907 /* AppDelegate.swift */,
-				7805A89D250252F6000B0907 /* ViewController.swift */,
 				7805A8A1250252F6000B0907 /* Main.storyboard */,
 				7805A8A4250252FA000B0907 /* Assets.xcassets */,
 				7805A8A6250252FA000B0907 /* LaunchScreen.storyboard */,
 				7805A8A9250252FA000B0907 /* Info.plist */,
 			);
 			path = ARCarGuide;
+			sourceTree = "<group>";
+		};
+		7805A8B125025DC2000B0907 /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				7805A8B225025DFF000B0907 /* Underhood.mlmodel */,
+			);
+			path = CoreML;
+			sourceTree = "<group>";
+		};
+		7805A8B82503B2CB000B0907 /* Detectors */ = {
+			isa = PBXGroup;
+			children = (
+				7805A8B62503B252000B0907 /* UnderHoodDetector.swift */,
+				7805A8AF2502551A000B0907 /* CoreMLObjectDetector.swift */,
+				787276AF250AD36D00864871 /* DetectorResult.swift */,
+			);
+			path = Detectors;
+			sourceTree = "<group>";
+		};
+		787276A5250ACD5600864871 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				787276A32506DE8B00864871 /* MainViewController.swift */,
+				787276A6250ACD6A00864871 /* MainViewModel.swift */,
+				787276AD250ACE8B00864871 /* ProcessResult.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		787276A8250ACD7800864871 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7805A8B4250267C3000B0907 /* Logger.swift */,
+				787276A9250ACDA400864871 /* CGRect.swift */,
+				787276AB250ACE4000864871 /* Entities.swift */,
+				787276B1250AD54400864871 /* ARCoachingOverlayViewDelegate.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +201,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7805A89E250252F6000B0907 /* ViewController.swift in Sources */,
+				787276A7250ACD6A00864871 /* MainViewModel.swift in Sources */,
+				7805A8B72503B252000B0907 /* UnderHoodDetector.swift in Sources */,
+				7805A8B5250267C3000B0907 /* Logger.swift in Sources */,
+				7805A8B02502551A000B0907 /* CoreMLObjectDetector.swift in Sources */,
+				787276B0250AD36D00864871 /* DetectorResult.swift in Sources */,
+				787276B2250AD54400864871 /* ARCoachingOverlayViewDelegate.swift in Sources */,
+				787276AE250ACE8B00864871 /* ProcessResult.swift in Sources */,
+				7805A8B325025DFF000B0907 /* Underhood.mlmodel in Sources */,
 				7805A89C250252F6000B0907 /* AppDelegate.swift in Sources */,
+				787276AC250ACE4000864871 /* Entities.swift in Sources */,
+				787276A42506DE8B00864871 /* MainViewController.swift in Sources */,
+				787276AA250ACDA400864871 /* CGRect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -266,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -287,7 +363,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = none.com.ARCarGuide;
+				PRODUCT_BUNDLE_IDENTIFIER = yo.com.ARCarGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -305,7 +381,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = none.com.ARCarGuide;
+				PRODUCT_BUNDLE_IDENTIFIER = yo.com.ARCarGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
