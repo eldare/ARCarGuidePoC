@@ -35,6 +35,7 @@ extension MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupARSession()
+        setupTapGesture()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -129,6 +130,21 @@ extension MainViewController {
             newEntity.add(children: LogoScene.logoEntities)
         }
         return newEntity
+    }
+}
+
+// MARK: - handle gestures
+extension MainViewController {
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGetstureDetected(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc private func tapGetstureDetected(_ sender: UITapGestureRecognizer? = nil) {
+        guard let tappedPoint = sender?.location(in: view) else { return }
+        guard let tappedEntity = arView.entity(at: tappedPoint) else { return }
+        print(tappedEntity.name)
     }
 }
 

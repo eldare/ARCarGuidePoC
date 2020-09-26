@@ -21,9 +21,10 @@ class PointEntity: Entity, HasModel, HasAnchoring {
     }
 }
 
-class GuideEntity: Entity, HasAnchoring {
+class GuideEntity: Entity, HasAnchoring, HasCollision {
     func add(children: [Entity]) {
         children.forEach { addChild($0) }
+//        collision = CollisionComponent(shapes: [.generateBox(size: [0.5, 0.5, 0.5])])
     }
 }
 
