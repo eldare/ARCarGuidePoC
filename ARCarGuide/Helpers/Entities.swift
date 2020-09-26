@@ -20,3 +20,26 @@ class PointEntity: Entity, HasModel, HasAnchoring {
         )
     }
 }
+
+class GuideEntity: Entity, HasAnchoring {
+    func add(children: [Entity]) {
+        children.forEach { addChild($0) }
+    }
+}
+
+extension Entity {
+    func position(with transformWith: simd_float4x4) {
+        let newPosition: SIMD3<Float> = [
+            transformWith.columns.3.x,
+            transformWith.columns.3.y,
+            transformWith.columns.3.z
+        ]
+        position = newPosition
+    }
+
+    func look(at targetPosition: SIMD3<Float>) {
+        look(at: targetPosition,
+             from: position(relativeTo: nil),
+             relativeTo: nil)
+    }
+}
