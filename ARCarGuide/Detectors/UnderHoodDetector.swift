@@ -7,10 +7,17 @@
 //
 
 import Foundation
+import Vision
 
 final class UnderHoodDetector: CoreMLObjectDetector {
     init() {
-        let mlModel = Underhood().model
+        let mlModelConfig = MLModelConfiguration()
+        let mlModel = try! Underhood(configuration: mlModelConfig).model
         super.init(mlModel: mlModel)
     }
+}
+
+enum UnderHoodIdentifiers: String, Hashable, GuideContentProtocol {
+    case logo
+    case cooler = "cool"
 }

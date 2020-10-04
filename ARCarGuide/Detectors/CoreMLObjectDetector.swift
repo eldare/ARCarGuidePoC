@@ -12,7 +12,7 @@ import ARKit
 import CoreML
 
 class CoreMLObjectDetector {
-    typealias SearchCompletion = (_ results: [DetectorResult], _ arFrame: ARFrame) -> Void
+    typealias SearchCompletion = (_ results: [DetectorResultModel], _ arFrame: ARFrame) -> Void
 
     private var searchCompletion: SearchCompletion?
     private let serialQueue: DispatchQueue = {
@@ -85,7 +85,7 @@ extension CoreMLObjectDetector {
     }
 
     private func requestCompletion(request: VNRequest, error: Error?) {
-        var detectorResults = [DetectorResult]()
+        var detectorResults = [DetectorResultModel]()
 
         defer {
             DispatchQueue.main.async { [weak self] in
@@ -105,7 +105,7 @@ extension CoreMLObjectDetector {
         guard let results = request.results as? [VNRecognizedObjectObservation] else { return }
         detectorResults = results.compactMap { result in
             guard let bestLabelIdentifier = result.labels.first?.identifier else { return nil }
-            let foundResult = DetectorResult(identifier: bestLabelIdentifier,
+            let foundResult = DetectorResultModel(identifier: bestLabelIdentifier,
                                              confidence: result.confidence,
                                              boundingBox: result.boundingBox)
             return foundResult

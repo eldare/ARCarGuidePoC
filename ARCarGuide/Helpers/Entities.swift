@@ -20,3 +20,27 @@ class PointEntity: Entity, HasModel, HasAnchoring {
         )
     }
 }
+
+class GuideEntity: Entity, HasAnchoring, HasCollision {
+    func add(children: [Entity]) {
+        children.forEach { addChild($0) }
+//        collision = CollisionComponent(shapes: [.generateBox(size: [0.5, 0.5, 0.5])])
+    }
+}
+
+extension Entity {
+    func position(with transformWith: simd_float4x4) {
+        let newPosition: SIMD3<Float> = [
+            transformWith.columns.3.x,
+            transformWith.columns.3.y,
+            transformWith.columns.3.z
+        ]
+        position = newPosition
+    }
+
+    func look(at targetPosition: SIMD3<Float>) {
+        look(at: targetPosition,
+             from: position(relativeTo: nil),
+             relativeTo: nil)
+    }
+}

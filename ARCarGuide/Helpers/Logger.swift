@@ -10,7 +10,7 @@ import Foundation
 
 struct log {
     static func info(_ text: String) {
-//        print("[INFO] \(text)")
+        print("[INFO] \(text)")
     }
 
     static func warning(_ text: String) {
