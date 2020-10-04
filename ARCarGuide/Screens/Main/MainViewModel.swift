@@ -8,10 +8,10 @@
 
 import ARKit
 
-class MainViewModel {
+final class MainViewModel {
     private let detector = UnderHoodDetector()
 
-    func process(arFrame: ARFrame, completion: @escaping (Result<ProcessResult, Error>) -> Void) {
+    func process(arFrame: ARFrame, completion: @escaping (Result<MainProcessResultModel, Error>) -> Void) {
         detector.search(in: arFrame, completion: { (results, arFrame) in
             results.forEach { result in
                 let flippedBoundingBox = result.boundingBox.flippedCoordinates
@@ -19,11 +19,15 @@ class MainViewModel {
                 let rayCastQuery = arFrame.raycastQuery(from: centerPoint,
                                                         allowing: .estimatedPlane,
                                                         alignment: .any)
-                let processResult = ProcessResult(identifier: result.identifier,
-                                                  boundingBox: flippedBoundingBox,
-                                                  raycastQuery: rayCastQuery)
+                let processResult = MainProcessResultModel(identifier: result.identifier,
+                                                           boundingBox: flippedBoundingBox,
+                                                           raycastQuery: rayCastQuery)
                 completion(.success(processResult))
             }
         })
+    }
+
+    func getDetails(for name: GuideContentProtocol) -> GuideContentModel? {
+        return name.load()
     }
 }

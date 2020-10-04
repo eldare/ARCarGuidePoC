@@ -1,5 +1,5 @@
 //
-//  ProcessResult.swift
+//  DetectorResultModel.swift
 //  ARCarGuide
 //
 //  Created by Eldar Eliav on 11/09/2020.
@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import ARKit
 
-struct ProcessResult {
+struct DetectorResultModel {
     var identifier: String
+    var confidence: Float
     var boundingBox: CGRect
-    var raycastQuery: ARRaycastQuery
 }

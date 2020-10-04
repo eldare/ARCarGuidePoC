@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     private let processOnceEveryNumberOfCycles = 10
     private var cycleCounter = 0
 
-    private var detectedEntities = [UnderHoodIdentifiers: Entity]()
+    private var detectedEntities = [UnderHoodIdentifiers: GuideEntity]()
 
     private let LogoScene: GuideScenes.Logo = {
         return try! GuideScenes.loadLogo()
@@ -88,7 +88,7 @@ extension MainViewController: ARSessionDelegate {
     }
 }
 
-// MARK: frame processing related
+// MARK: - frame processing related
 extension MainViewController {
     private func process(frame: ARFrame) {
         viewModel.process(arFrame: frame) { [weak self] result in
@@ -101,7 +101,7 @@ extension MainViewController {
         }
     }
 
-    private func successfulProcessResult(_ processResult: ProcessResult) {
+    private func successfulProcessResult(_ processResult: MainProcessResultModel) {
         guard let identifier = UnderHoodIdentifiers(rawValue: processResult.identifier) else {
             log.error("unsupported identifier: \(processResult.identifier)")
             return
@@ -144,7 +144,26 @@ extension MainViewController {
     @objc private func tapGetstureDetected(_ sender: UITapGestureRecognizer? = nil) {
         guard let tappedPoint = sender?.location(in: view) else { return }
         guard let tappedEntity = arView.entity(at: tappedPoint) else { return }
-        print(tappedEntity.name)
+
+        // DEV: incomplete - *ELDAR* - switch needed while there is inconsinsancy between Model's Classes and RealityKit Entity names.
+        // DEV: incomplete - *ELDAR*        - "cool" must be "coolerFluidContainer" everywhere
+        var content: GuideContentModel!
+        switch tappedEntity.name {
+        case "logo":
+            content = UnderHoodIdentifiers.logo.load()
+        case "cooler":
+            content = UnderHoodIdentifiers.cooler.load()
+        default:
+            fatalError()
+        }
+
+        presentDetails(content)
+    }
+
+    private func presentDetails(_ content: GuideContentModel) {
+        let detailsVC = UIStoryboard.loadVC(vcIdentifier: "DetailsViewController") as! DetailsViewController
+        detailsVC.set(titleText: content.title, bodyText: content.body)
+        self.present(detailsVC, animated: true)
     }
 }
 
