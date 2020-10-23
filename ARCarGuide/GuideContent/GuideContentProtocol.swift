@@ -10,12 +10,12 @@ import Foundation
 
 protocol GuideContentProtocol {
     var rawValue: String { get }
-    func load() -> GuideContentModel?
+    func loadMarkdownResource() -> URL
 }
 
 extension GuideContentProtocol {
-    func load() -> GuideContentModel? {
+    func loadMarkdownResource() -> URL {
         let resourceName = self.rawValue
-        return Bundle.main.loadJsonResource(name: resourceName)
+        return Bundle.main.url(forResource: resourceName, withExtension: "md")!
     }
 }

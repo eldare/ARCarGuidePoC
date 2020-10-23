@@ -7,22 +7,25 @@
 //
 
 import UIKit
+import SwiftyMarkdown
 
 class DetailsViewController: UIViewController {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var bodyTextView: UITextView!
-    private var titleText: String!
-    private var bodyText: String!
+    @IBOutlet weak var textView: UITextView!
 
-    func set(titleText: String, bodyText: String) {
-        self.titleText = titleText
-        self.bodyText = bodyText
+    private var attributedTextContent: NSAttributedString!
+
+    func set(from markdownResourceURL: URL?) {
+        guard let url = markdownResourceURL,
+              let markdown = SwiftyMarkdown(url: url) else {
+            log.error("failed to load markdown resource from url \(String(describing: markdownResourceURL))")
+            return
+        }
+        self.attributedTextContent = markdown.attributedString()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = titleText
-        bodyTextView.text = bodyText
+        textView.attributedText = attributedTextContent
     }
 
     @IBAction private func closePressed(_ sender: UIButton) {

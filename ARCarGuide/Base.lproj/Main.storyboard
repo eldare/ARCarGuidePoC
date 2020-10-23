@@ -46,23 +46,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ejc-NZ-6IS">
-                                <rect key="frame" x="12" y="154" width="391" height="649"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u6m-93-D5q">
+                                <rect key="frame" x="5" y="44" width="404" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum __!___                             1111111111111111111111999999999</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ua-Nq-fSn">
-                                <rect key="frame" x="12" y="80" width="391" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Vex-CM-j3R"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7A-Eu-ch4">
                                 <rect key="frame" x="182" y="821" width="50" height="50"/>
                                 <constraints>
@@ -76,28 +67,23 @@
                                     </preferredSymbolConfiguration>
                                 </state>
                                 <connections>
-                                    <action selector="closePressed:" destination="Fmn-5z-oIp" eventType="touchUpInside" id="olN-t0-r8Y"/>
+                                    <action selector="closePressed:" destination="Fmn-5z-oIp" eventType="touchUpInside" id="c1A-WK-rMh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XxI-mp-slJ"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ejc-NZ-6IS" firstAttribute="top" secondItem="1Ua-Nq-fSn" secondAttribute="bottom" constant="24" id="0Ef-8R-bmb"/>
-                            <constraint firstItem="ejc-NZ-6IS" firstAttribute="leading" secondItem="XxI-mp-slJ" secondAttribute="leading" constant="12" id="2VT-hy-Fiw"/>
-                            <constraint firstItem="1Ua-Nq-fSn" firstAttribute="leading" secondItem="XxI-mp-slJ" secondAttribute="leading" constant="12" id="4lM-r8-4CT"/>
-                            <constraint firstItem="1Ua-Nq-fSn" firstAttribute="top" secondItem="XxI-mp-slJ" secondAttribute="top" constant="36" id="F4q-2M-cwp"/>
-                            <constraint firstItem="XxI-mp-slJ" firstAttribute="trailing" secondItem="ejc-NZ-6IS" secondAttribute="trailing" constant="11" id="FhH-uB-EvW"/>
-                            <constraint firstItem="A7A-Eu-ch4" firstAttribute="top" secondItem="ejc-NZ-6IS" secondAttribute="bottom" constant="18" id="SwX-yO-scH"/>
-                            <constraint firstItem="XxI-mp-slJ" firstAttribute="trailing" secondItem="1Ua-Nq-fSn" secondAttribute="trailing" constant="11" id="TaU-t8-hya"/>
+                            <constraint firstItem="u6m-93-D5q" firstAttribute="leading" secondItem="XxI-mp-slJ" secondAttribute="leading" constant="5" id="GBF-F8-QLC"/>
+                            <constraint firstItem="u6m-93-D5q" firstAttribute="bottom" secondItem="XxI-mp-slJ" secondAttribute="bottom" constant="34" id="L9J-LJ-ZGf"/>
                             <constraint firstItem="XxI-mp-slJ" firstAttribute="bottom" secondItem="A7A-Eu-ch4" secondAttribute="bottom" constant="-9" id="YY5-Tj-E3F"/>
-                            <constraint firstItem="XxI-mp-slJ" firstAttribute="bottom" secondItem="ejc-NZ-6IS" secondAttribute="bottom" constant="59" id="iLa-Py-eea"/>
+                            <constraint firstItem="u6m-93-D5q" firstAttribute="top" secondItem="XxI-mp-slJ" secondAttribute="top" id="nKQ-3A-Rsg"/>
+                            <constraint firstItem="XxI-mp-slJ" firstAttribute="trailing" secondItem="u6m-93-D5q" secondAttribute="trailing" constant="5" id="ou0-IK-KZA"/>
                             <constraint firstItem="A7A-Eu-ch4" firstAttribute="centerX" secondItem="XxI-mp-slJ" secondAttribute="centerX" id="yVH-BS-I2J"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bodyTextView" destination="ejc-NZ-6IS" id="fL6-Lt-uqC"/>
-                        <outlet property="titleLabel" destination="1Ua-Nq-fSn" id="NFP-qp-LcH"/>
+                        <outlet property="textView" destination="u6m-93-D5q" id="GMk-mY-GLg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQ6-xv-3F3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -106,6 +92,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
