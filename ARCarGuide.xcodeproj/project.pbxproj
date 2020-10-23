@@ -111,10 +111,10 @@
 				78559197252A424400388B87 /* GuideContent */,
 				787276A8250ACD7800864871 /* Helpers */,
 				7805A89B250252F6000B0907 /* AppDelegate.swift */,
+				78A4892F25434537009CB914 /* Types.swift */,
 				7805A8A1250252F6000B0907 /* Main.storyboard */,
 				7805A8A6250252FA000B0907 /* LaunchScreen.storyboard */,
 				7805A8A9250252FA000B0907 /* Info.plist */,
-				78A4892F25434537009CB914 /* Types.swift */,
 			);
 			path = ARCarGuide;
 			sourceTree = "<group>";

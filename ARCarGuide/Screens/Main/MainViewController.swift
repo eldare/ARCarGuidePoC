@@ -42,13 +42,6 @@ extension MainViewController {
         super.viewWillAppear(animated)
         setupCoachingOverlay(with: arView.session)
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let detailsVC = UIStoryboard.loadVC(vcIdentifier: "DetailsViewController") as! DetailsViewController
-        detailsVC.set(from: UnderHoodIdentifiers.cooler.loadMarkdownResource())
-        self.present(detailsVC, animated: true)
-    }
 }
 
 // MARK: - AR setup
