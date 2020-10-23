@@ -1,6 +1,6 @@
 # RealityComposer
 *.mov
-ARCarGuide/CoreML/*
+ARCarGuide/Resources/CoreML/*
 
 # Xcode
 #

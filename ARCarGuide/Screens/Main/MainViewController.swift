@@ -42,6 +42,13 @@ extension MainViewController {
         super.viewWillAppear(animated)
         setupCoachingOverlay(with: arView.session)
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let detailsVC = UIStoryboard.loadVC(vcIdentifier: "DetailsViewController") as! DetailsViewController
+        detailsVC.set(from: UnderHoodIdentifiers.cooler.loadMarkdownResource())
+        self.present(detailsVC, animated: true)
+    }
 }
 
 // MARK: - AR setup
@@ -147,22 +154,13 @@ extension MainViewController {
 
         // DEV: incomplete - *ELDAR* - switch needed while there is inconsinsancy between Model's Classes and RealityKit Entity names.
         // DEV: incomplete - *ELDAR*        - "cool" must be "coolerFluidContainer" everywhere
-        var content: GuideContentModel!
-        switch tappedEntity.name {
-        case "logo":
-            content = UnderHoodIdentifiers.logo.load()
-        case "cooler":
-            content = UnderHoodIdentifiers.cooler.load()
-        default:
-            fatalError()
-        }
-
-        presentDetails(content)
+        let url = viewModel.getMarkdownResourceURL(for: tappedEntity.name)
+        presentDetails(markdownResourceURL: url)
     }
 
-    private func presentDetails(_ content: GuideContentModel) {
+    private func presentDetails(markdownResourceURL: URL) {
         let detailsVC = UIStoryboard.loadVC(vcIdentifier: "DetailsViewController") as! DetailsViewController
-        detailsVC.set(titleText: content.title, bodyText: content.body)
+        detailsVC.set(from: markdownResourceURL)
         self.present(detailsVC, animated: true)
     }
 }

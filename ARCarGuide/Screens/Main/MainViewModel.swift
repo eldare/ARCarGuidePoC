@@ -27,7 +27,14 @@ final class MainViewModel {
         })
     }
 
-    func getDetails(for name: GuideContentProtocol) -> GuideContentModel? {
-        return name.load()
+    func getMarkdownResourceURL(for entityName: EntityName) -> URL {
+        switch entityName {
+        case "logo":
+            return UnderHoodIdentifiers.logo.loadMarkdownResource()
+        case "cooler":
+            return UnderHoodIdentifiers.cooler.loadMarkdownResource()
+        default:
+            fatalError()
+        }
     }
 }
