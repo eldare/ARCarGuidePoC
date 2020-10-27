@@ -31,10 +31,10 @@
 		78A4892A25433DF0009CB914 /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = 78A4892925433DF0009CB914 /* SwiftyMarkdown */; };
 		78A4892D25434045009CB914 /* logo.md in Resources */ = {isa = PBXBuildFile; fileRef = 78A4892C25434045009CB914 /* logo.md */; };
 		78A4893025434537009CB914 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A4892F25434537009CB914 /* Types.swift */; };
-		78A489342543484C009CB914 /* cool.md in Resources */ = {isa = PBXBuildFile; fileRef = 78A489332543484C009CB914 /* cool.md */; };
+		78A489342543484C009CB914 /* coolant.md in Resources */ = {isa = PBXBuildFile; fileRef = 78A489332543484C009CB914 /* coolant.md */; };
 		78A4893D25434CE8009CB914 /* car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78A4893C25434CE8009CB914 /* car.jpg */; };
-		78A4894725435112009CB914 /* cooler_radiator.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78A4894525435112009CB914 /* cooler_radiator.gif */; };
-		78A4894825435112009CB914 /* cooler_container.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78A4894625435112009CB914 /* cooler_container.gif */; };
+		78A4894725435112009CB914 /* coolant_radiator.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78A4894525435112009CB914 /* coolant_radiator.gif */; };
+		78A4894825435112009CB914 /* coolant_container.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78A4894625435112009CB914 /* coolant_container.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,10 +64,10 @@
 		789B7994252A2EBF004CB41D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		78A4892C25434045009CB914 /* logo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = logo.md; sourceTree = "<group>"; };
 		78A4892F25434537009CB914 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		78A489332543484C009CB914 /* cool.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = cool.md; sourceTree = "<group>"; };
+		78A489332543484C009CB914 /* coolant.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = coolant.md; sourceTree = "<group>"; };
 		78A4893C25434CE8009CB914 /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = car.jpg; sourceTree = "<group>"; };
-		78A4894525435112009CB914 /* cooler_radiator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cooler_radiator.gif; sourceTree = "<group>"; };
-		78A4894625435112009CB914 /* cooler_container.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cooler_container.gif; sourceTree = "<group>"; };
+		78A4894525435112009CB914 /* coolant_radiator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = coolant_radiator.gif; sourceTree = "<group>"; };
+		78A4894625435112009CB914 /* coolant_container.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = coolant_container.gif; sourceTree = "<group>"; };
 		78B4BEEE250406F600837181 /* AR Session - mazda again.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR Session - mazda again.mov"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				78A48937254348D8009CB914 /* logo */,
-				78A4894025434D1B009CB914 /* cooler */,
+				78A4894025434D1B009CB914 /* coolant */,
 			);
 			path = GuideContent;
 			sourceTree = "<group>";
@@ -222,14 +222,14 @@
 			path = logo;
 			sourceTree = "<group>";
 		};
-		78A4894025434D1B009CB914 /* cooler */ = {
+		78A4894025434D1B009CB914 /* coolant */ = {
 			isa = PBXGroup;
 			children = (
-				78A489332543484C009CB914 /* cool.md */,
-				78A4894625435112009CB914 /* cooler_container.gif */,
-				78A4894525435112009CB914 /* cooler_radiator.gif */,
+				78A489332543484C009CB914 /* coolant.md */,
+				78A4894625435112009CB914 /* coolant_container.gif */,
+				78A4894525435112009CB914 /* coolant_radiator.gif */,
 			);
-			path = cooler;
+			path = coolant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,11 +296,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78A4894725435112009CB914 /* cooler_radiator.gif in Resources */,
+				78A4894725435112009CB914 /* coolant_radiator.gif in Resources */,
 				78A4892D25434045009CB914 /* logo.md in Resources */,
-				78A489342543484C009CB914 /* cool.md in Resources */,
+				78A489342543484C009CB914 /* coolant.md in Resources */,
 				7805A8A8250252FA000B0907 /* LaunchScreen.storyboard in Resources */,
-				78A4894825435112009CB914 /* cooler_container.gif in Resources */,
+				78A4894825435112009CB914 /* coolant_container.gif in Resources */,
 				7805A8A5250252FA000B0907 /* Assets.xcassets in Resources */,
 				78A4893D25434CE8009CB914 /* car.jpg in Resources */,
 				789B7995252A2EBF004CB41D /* README.md in Resources */,

@@ -19,5 +19,5 @@ final class UnderHoodDetector: CoreMLObjectDetector {
 
 enum UnderHoodIdentifiers: String, Hashable, GuideContentProtocol {
     case logo
-    case cooler = "cool"
+    case coolant
 }

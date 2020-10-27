@@ -1,6 +1,6 @@
 
 
-# Engine Cooler Fluid
+# Engine Coolant Fluid
 
 __WARNING:__
 
@@ -10,9 +10,9 @@ __WARNING:__
 
 ## Fluid Replacement
 
-1) Remove the cooling system cap. ![container](cooler_container.gif) 
+1) Remove the cooling system cap. ![container](coolant_container.gif) 
 
-2) Loosen the radiator drain plug and drain the engine coolant into a container. ![radiator](cooler_radiator.gif)
+2) Loosen the radiator drain plug and drain the engine coolant into a container. ![radiator](coolant_radiator.gif)
 
 3) Flush the cooling system with water until all traces of color are gone. 
 
