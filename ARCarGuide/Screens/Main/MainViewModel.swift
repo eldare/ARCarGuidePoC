@@ -31,8 +31,8 @@ final class MainViewModel {
         switch entityName {
         case "logo":
             return UnderHoodIdentifiers.logo.loadMarkdownResource()
-        case "cooler":
-            return UnderHoodIdentifiers.cooler.loadMarkdownResource()
+        case "coolant":
+            return UnderHoodIdentifiers.coolant.loadMarkdownResource()
         default:
             fatalError()
         }
