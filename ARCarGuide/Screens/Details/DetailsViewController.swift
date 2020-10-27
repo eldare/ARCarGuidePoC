@@ -20,7 +20,8 @@ class DetailsViewController: UIViewController {
             log.error("failed to load markdown resource from url \(String(describing: markdownResourceURL))")
             return
         }
-        self.attributedTextContent = markdown.attributedString()
+        markdown.body.alignment = .justified
+        attributedTextContent = markdown.attributedString()
     }
 
     override func viewDidLoad() {

@@ -25,8 +25,8 @@ class MainViewController: UIViewController {
     private let LogoScene: GuideScenes.Logo = {
         return try! GuideScenes.loadLogo()
     }()
-    private let CoolerScene: GuideScenes.Cooler = {
-        return try! GuideScenes.loadCooler()
+    private let CoolantScene: GuideScenes.Coolant = {
+        return try! GuideScenes.loadCoolant()
     }()
 }
 
@@ -41,13 +41,6 @@ extension MainViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupCoachingOverlay(with: arView.session)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let detailsVC = UIStoryboard.loadVC(vcIdentifier: "DetailsViewController") as! DetailsViewController
-        detailsVC.set(from: UnderHoodIdentifiers.cooler.loadMarkdownResource())
-        self.present(detailsVC, animated: true)
     }
 }
 
@@ -110,7 +103,7 @@ extension MainViewController {
 
     private func successfulProcessResult(_ processResult: MainProcessResultModel) {
         guard let identifier = UnderHoodIdentifiers(rawValue: processResult.identifier) else {
-            log.error("unsupported identifier: \(processResult.identifier)")
+            // unsupported identifier
             return
         }
 
@@ -131,10 +124,10 @@ extension MainViewController {
     private func prepareGuideEntity(identifier: UnderHoodIdentifiers) -> GuideEntity {
         let newEntity = GuideEntity()
         switch identifier {
-        case .cooler:
-            newEntity.add(children: CoolerScene.coolerEntities)
         case .logo:
             newEntity.add(children: LogoScene.logoEntities)
+        case .coolant:
+            newEntity.add(children: CoolantScene.coolantEntities)
         }
         return newEntity
     }
@@ -151,17 +144,15 @@ extension MainViewController {
     @objc private func tapGetstureDetected(_ sender: UITapGestureRecognizer? = nil) {
         guard let tappedPoint = sender?.location(in: view) else { return }
         guard let tappedEntity = arView.entity(at: tappedPoint) else { return }
-
-        // DEV: incomplete - *ELDAR* - switch needed while there is inconsinsancy between Model's Classes and RealityKit Entity names.
-        // DEV: incomplete - *ELDAR*        - "cool" must be "coolerFluidContainer" everywhere
         let url = viewModel.getMarkdownResourceURL(for: tappedEntity.name)
         presentDetails(markdownResourceURL: url)
     }
 
     private func presentDetails(markdownResourceURL: URL) {
         let detailsVC = UIStoryboard.loadVC(vcIdentifier: "DetailsViewController") as! DetailsViewController
+        detailsVC.modalPresentationStyle = .automatic
         detailsVC.set(from: markdownResourceURL)
-        self.present(detailsVC, animated: true)
+        present(detailsVC, animated: true)
     }
 }
 

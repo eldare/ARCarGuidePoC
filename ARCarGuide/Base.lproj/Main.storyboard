@@ -46,13 +46,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u6m-93-D5q">
-                                <rect key="frame" x="5" y="44" width="404" height="852"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="u6m-93-D5q">
+                                <rect key="frame" x="8" y="44" width="398" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7A-Eu-ch4">
                                 <rect key="frame" x="182" y="821" width="50" height="50"/>
@@ -74,11 +74,11 @@
                         <viewLayoutGuide key="safeArea" id="XxI-mp-slJ"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="u6m-93-D5q" firstAttribute="leading" secondItem="XxI-mp-slJ" secondAttribute="leading" constant="5" id="GBF-F8-QLC"/>
+                            <constraint firstItem="u6m-93-D5q" firstAttribute="leading" secondItem="XxI-mp-slJ" secondAttribute="leading" constant="8" id="GBF-F8-QLC"/>
                             <constraint firstItem="u6m-93-D5q" firstAttribute="bottom" secondItem="XxI-mp-slJ" secondAttribute="bottom" constant="34" id="L9J-LJ-ZGf"/>
                             <constraint firstItem="XxI-mp-slJ" firstAttribute="bottom" secondItem="A7A-Eu-ch4" secondAttribute="bottom" constant="-9" id="YY5-Tj-E3F"/>
                             <constraint firstItem="u6m-93-D5q" firstAttribute="top" secondItem="XxI-mp-slJ" secondAttribute="top" id="nKQ-3A-Rsg"/>
-                            <constraint firstItem="XxI-mp-slJ" firstAttribute="trailing" secondItem="u6m-93-D5q" secondAttribute="trailing" constant="5" id="ou0-IK-KZA"/>
+                            <constraint firstItem="XxI-mp-slJ" firstAttribute="trailing" secondItem="u6m-93-D5q" secondAttribute="trailing" constant="8" id="ou0-IK-KZA"/>
                             <constraint firstItem="A7A-Eu-ch4" firstAttribute="centerX" secondItem="XxI-mp-slJ" secondAttribute="centerX" id="yVH-BS-I2J"/>
                         </constraints>
                     </view>
