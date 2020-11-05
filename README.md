@@ -6,7 +6,7 @@ Tap AR entities to get more information about the part.
 This is a PoC project, designed to detect a handful of Mazda 3 parts.
 
 - `ARKit`.
-- `Vision` with a self taught `CoreML` model.
+- `Vision` with a self taught `CoreML` model. (Model included)
 - `RealityKit` with `RealityComposer`.
 
 ## App Demo
@@ -18,5 +18,6 @@ This is a PoC project, designed to detect a handful of Mazda 3 parts.
 <h4>Feel free to suggest ideas to make this more than just a PoC</h4>
 
 Cheers! 🎈
+Eldar.
 
 
