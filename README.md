@@ -1,3 +1,6 @@
+![required ios version](https://img.shields.io/badge/iOS-13+-black.svg?longCache=true&style=flat&logo=apple)&nbsp;
+![swift version](https://img.shields.io/badge/swift-5.3-orange.svg?longCache=true&style=flat&logo=swift)&nbsp;
+
 # ARCarGuidePoC
 
 Detects parts under a hood of a motor vehicle, and tracks the detected parts in AR.<br>
