@@ -6,7 +6,7 @@
 Detects parts under a hood of a motor vehicle, and tracks the detected parts in AR.<br>
 Tap AR entities to get more information about the part.
 
-This is a PoC project, designed to detect a handful of Mazda 3 parts.
+This is a PoC project, designed to detect a handful of Mazda 3 parts.<br>
 Debug .mov file with AR planes is avaialbe for download [here](https://drive.google.com/file/d/1wc2bRMznvhNrf7JIyi035bWce3RNfyQr/view?usp=sharing)
 
 - `ARKit`
